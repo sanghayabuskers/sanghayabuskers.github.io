@@ -1,0 +1,174 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor Rules for Vite + React + TypeScript Project
+
+## Project Structure
+
+### Directory Organization
+
+- `src/`: Source code
+  - `components/`: Reusable UI components
+  - `pages/`: Page components and routes
+  - `hooks/`: Custom hooks
+  - `utils/`: Utility functions
+  - `types/`: TypeScript type definitions
+  - `assets/`: Static assets (images, fonts, etc.)
+  - `styles/`: Global styles and theme definitions
+  - `api/`: API integration and services
+  - `store/`: State management
+  - `constants/`: Application constants
+  - `layouts/`: Layout components
+  - `context/`: React Context providers
+
+### File Naming
+
+- Components: PascalCase (e.g., `Button.tsx`, `UserProfile.tsx`)
+- Hooks: camelCase with 'use' prefix (e.g., `useAuth.ts`, `useForm.ts`)
+- Utilities: camelCase (e.g., `formatDate.ts`, `validation.ts`)
+- Types: PascalCase (e.g., `UserTypes.ts`, `ApiResponse.ts`)
+- Tests: Same name as source file with `.test.tsx` or `.spec.tsx` suffix
+- Context: PascalCase with 'Context' suffix (e.g., `AuthContext.tsx`)
+
+## Code Style
+
+### TypeScript
+
+- Strict mode enabled
+- Explicit return types on functions
+- Interface over type when possible
+- Readonly properties when applicable
+- Avoid `any` type
+- Use type inference when obvious
+- Explicit `unknown` over `any`
+- Use discriminated unions for complex state
+- Use `type` for React component props
+
+### React
+
+- Functional components only
+- Props interface for each component
+- Destructure props
+- Use hooks for state management
+- `useState` for local state
+- `useEffect` for side effects
+- `useMemo` for expensive computations
+- `useCallback` for memoized callbacks
+- `useContext` for global state
+- Event handlers prefixed with 'handle'
+- Component files should export exactly one component
+- Use React.memo for performance optimization when needed
+
+### Imports
+
+- Group imports:
+  1. React and React-related imports
+  2. Third-party libraries
+  3. Internal absolute imports
+  4. Internal relative imports
+- No default exports (except for pages)
+- Use barrel exports (index.ts) for component directories
+
+### Formatting
+
+- 100 characters line length
+- 2 spaces indentation
+- Single quotes for strings
+- Double quotes for JSX
+- Semicolons required
+- Trailing commas in multi-line
+- No unused variables or imports
+- Consistent spacing around operators
+- Parentheses around arrow function parameters
+
+## Testing
+
+- Unit tests with React Testing Library
+- Component tests focusing on user interactions
+- Integration tests for critical user flows
+- Test file co-located with source file
+- Descriptive test names
+- Arrange-Act-Assert pattern
+- Mock external dependencies
+- Test error cases
+- Use `@testing-library/user-event` for user interactions
+- Test accessibility with `jest-axe`
+
+## Performance
+
+- Lazy load routes with `React.lazy`
+- Code splitting with dynamic imports
+- Optimize images
+- Memoize expensive computations
+- Use fragments to avoid unnecessary DOM nodes
+- Implement virtualization for long lists
+- Bundle size monitoring
+- Tree-shakeable imports
+- Use `React.memo` strategically
+- Avoid prop drilling with Context
+
+## Security
+
+- No sensitive data in source code
+- Environment variables for secrets
+- Input sanitization
+- Type-safe API calls
+- XSS prevention
+- CSRF protection
+- Content Security Policy
+- Secure cookie handling
+- Sanitize HTML content with DOMPurify
+- Validate props with PropTypes in development
+
+## Accessibility
+
+- Semantic HTML
+- ARIA attributes when needed
+- Keyboard navigation
+- Color contrast compliance
+- Screen reader support
+- Focus management
+- Error announcements
+- Alt text for images
+- Use semantic React components
+- Implement focus traps for modals
+
+## State Management
+
+- Use React Context for global state
+- Consider Redux Toolkit for complex state
+- Local state with useState
+- Form state with React Hook Form
+- Server state with React Query/SWR
+- Implement proper loading states
+- Handle error states gracefully
+- Use reducers for complex state logic
+
+## Git
+
+- Conventional commits
+- Feature branches
+- Pull request templates
+- Branch protection
+- Code review process
+- No secrets in repo
+- Ignore build artifacts
+- Lock files committed
+- Husky for pre-commit hooks
+- Lint-staged for staged files
+
+## Documentation
+
+- README.md for setup
+- Component documentation with Storybook
+- Type documentation
+- API documentation
+- Code comments for complex logic
+- JSDoc for public APIs
+- Change log
+- Contributing guidelines
+- Props documentation
+- Component usage examples
+
